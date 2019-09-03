@@ -35,8 +35,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //finish();
             //startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
-        editLoginEmail = (EditText) findViewById(R.id.editTextEmail);
-        editLoginPassword = (EditText) findViewById(R.id.editTextPassword);
+        editLoginEmail = (EditText) findViewById(R.id.editLoginTextEmail);
+        editLoginPassword = (EditText) findViewById(R.id.editLoginTextPassword);
         buttonSignIn = (Button) findViewById(R.id.buttonLogin);
         textViewSignup = (TextView) findViewById(R.id.textViewSignUp);
         progressBar = new ProgressDialog(this);
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
 
         }
-        progressBar.setMessage("Registering User. Please wait.");
+        progressBar.setMessage("Logging In User. Please wait.");
         progressBar.show();
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -68,6 +68,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(task.isSuccessful()) {
                     finish();
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                }
+                else {
+                    Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+
                 }
 
             }

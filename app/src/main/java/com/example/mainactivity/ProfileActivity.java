@@ -29,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         profileText = (TextView) findViewById(R.id.textViewUserEmail);
         profileButton = (Button) findViewById(R.id.buttonLogout);
-        profileText.setText("Welcome ");
+        profileText.setText("Welcome " +user.getEmail());
         profileButton.setOnClickListener(this);
 
     }
