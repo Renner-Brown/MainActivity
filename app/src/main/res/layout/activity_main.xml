@@ -56,4 +56,13 @@
             />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New User Registration"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="82dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
